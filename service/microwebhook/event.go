@@ -6,6 +6,8 @@ type Event struct {
 	Topic     string    `json:"topic"`
 	EventID   string    `json:"event_id"`
 	CreatedAt time.Time `json:"created_at"`
+	EnrollmentID string `json:"enrollment_id,omitempty"`
+	CommandUUID  string `json:"command_uuid,omitempty"`
 
 	AcknowledgeEvent *AcknowledgeEvent `json:"acknowledge_event,omitempty"`
 	CheckinEvent     *CheckinEvent     `json:"checkin_event,omitempty"`
