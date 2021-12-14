@@ -28,7 +28,10 @@ func postWebhookEvent(
 		return err
 	}
 	if resp.StatusCode != 200 {
-		return fmt.Errorf("unexpected HTTP status %d %s", resp.StatusCode, resp.Status)
+		return fmt.Errorf(
+			"unexpected HTTP status %d %s for webhook, url: %s, event: %s, topic: %s, enrollment id: %s, command_uuid: %s",
+			resp.StatusCode, resp.Status, url, event.EventID, event.EnrollmentID, event.CommandUUID
+		)
 	}
 	return nil
 }

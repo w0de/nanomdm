@@ -27,6 +27,8 @@ func (w *MicroWebhook) Authenticate(r *mdm.Request, m *mdm.Authenticate) error {
 	ev := &Event{
 		Topic:     "mdm.Authenticate",
 		CreatedAt: time.Now(),
+		CommandUUID: "",
+		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
 			EnrollmentID: m.EnrollmentID,
@@ -41,6 +43,8 @@ func (w *MicroWebhook) TokenUpdate(r *mdm.Request, m *mdm.TokenUpdate) error {
 	ev := &Event{
 		Topic:     "mdm.TokenUpdate",
 		CreatedAt: time.Now(),
+		CommandUUID: "",
+		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
 			EnrollmentID: m.EnrollmentID,
@@ -62,6 +66,8 @@ func (w *MicroWebhook) CheckOut(r *mdm.Request, m *mdm.CheckOut) error {
 	ev := &Event{
 		Topic:     "mdm.CheckOut",
 		CreatedAt: time.Now(),
+		CommandUUID: "",
+		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
 			EnrollmentID: m.EnrollmentID,
@@ -76,6 +82,8 @@ func (w *MicroWebhook) UserAuthenticate(r *mdm.Request, m *mdm.UserAuthenticate)
 	ev := &Event{
 		Topic:     "mdm.UserAuthenticate",
 		CreatedAt: time.Now(),
+		CommandUUID: "",
+		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
 			EnrollmentID: m.EnrollmentID,
@@ -90,6 +98,8 @@ func (w *MicroWebhook) SetBootstrapToken(r *mdm.Request, m *mdm.SetBootstrapToke
 	ev := &Event{
 		Topic:     "mdm.SetBootstrapToken",
 		CreatedAt: time.Now(),
+		CommandUUID: "",
+		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
 			EnrollmentID: m.EnrollmentID,
@@ -104,6 +114,8 @@ func (w *MicroWebhook) GetBootstrapToken(r *mdm.Request, m *mdm.GetBootstrapToke
 	ev := &Event{
 		Topic:     "mdm.GetBootstrapToken",
 		CreatedAt: time.Now(),
+		CommandUUID: "",
+		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
 			EnrollmentID: m.EnrollmentID,
@@ -118,6 +130,8 @@ func (w *MicroWebhook) CommandAndReportResults(r *mdm.Request, results *mdm.Comm
 	ev := &Event{
 		Topic:     "mdm.Connect",
 		CreatedAt: time.Now(),
+		CommandUUID: results.CommandUUID,
+		EnrollmentID: results.EnrollmentID,
 		AcknowledgeEvent: &AcknowledgeEvent{
 			UDID:         results.UDID,
 			EnrollmentID: results.EnrollmentID,
@@ -134,6 +148,8 @@ func (w *MicroWebhook) DeclarativeManagement(r *mdm.Request, m *mdm.DeclarativeM
 	ev := &Event{
 		Topic:     "mdm.DeclarativeManagement",
 		CreatedAt: time.Now(),
+		CommandUUID: "",
+		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
 			EnrollmentID: m.EnrollmentID,
