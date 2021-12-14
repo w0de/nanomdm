@@ -37,6 +37,3 @@ func postWebhookEvent(
 	}
 	return nil
 }
-
-X-Forwarded-Proto:
-X-Forwarded-For:
