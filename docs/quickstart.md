@@ -23,11 +23,11 @@ If you don't already have a SCEP server we'll need to set one up. For this guide
 ```
 $ mkdir scep && cd scep
 
-$ curl -RLO https://github.com/micromdm/scep/releases/download/v2.0.0/scepserver-darwin-amd64-v2.0.0.zip
+$ curl -RLO https://github.com/micromdm/scep/releases/download/v2.1.0/scepserver-darwin-amd64-v2.1.0.zip
 [snip]
 
-$ unzip scepserver-darwin-amd64-v2.0.0.zip 
-Archive:  scepserver-darwin-amd64-v2.0.0.zip
+$ unzip scepserver-darwin-amd64-v2.1.0.zip 
+Archive:  scepserver-darwin-amd64-v2.1.0.zip
   inflating: scepserver-darwin-amd64  
 
 $ ./scepserver-darwin-amd64 ca -init
@@ -84,11 +84,11 @@ This requests the CA certificate from the SCEP server, converts it into a PEM fi
 ```
 $ mkdir nanomdm && cd nanomdm
 
-$ curl -RLO https://github.com/micromdm/nanomdm/releases/download/v0.1.0/nanomdm-darwin-amd64-v0.1.0.zip
+$ curl -RLO https://github.com/micromdm/nanomdm/releases/download/v0.2.0/nanomdm-darwin-amd64-v0.2.0.zip
 [snip]
 
-$ unzip nanomdm-darwin-amd64-v0.1.0.zip 
-Archive:  nanomdm-darwin-amd64-v0.1.0.zip
+$ unzip nanomdm-darwin-amd64-v0.2.0.zip 
+Archive:  nanomdm-darwin-amd64-v0.2.0.zip
   inflating: nanomdm-darwin-amd64  
 ```
 
@@ -232,7 +232,7 @@ $ ./tools/cmdr.py SecurityInfo
 It also has a `-r` mode to pick a random read-only command to generate. We'll use this to send a command to our MDM device!
 
 ```
-$ ./tools/cmdr.py -r | curl -T - -u nanomdm:nanomm 'http://127.0.0.1:9000/v1/enqueue/E9085AF6-DCCB-5661-A678-BCE8F4D9A2C8'
+$ ./tools/cmdr.py -r | curl -T - -u nanomdm:nanomdm 'http://127.0.0.1:9000/v1/enqueue/E9085AF6-DCCB-5661-A678-BCE8F4D9A2C8'
 {
 	"status": {
 		"E9085AF6-DCCB-5661-A678-BCE8F4D9A2C8": {
@@ -274,4 +274,4 @@ Great! You've verified the basics of getting NanoMDM going! Now you can move on 
 * A proper TLS certificate (possibly using Let's Encrypt, even).
 * A proper reverse-proxy/load balancer (Nginx, HAProxy, Apache, etc.)
 * A proper deployment, perhaps in a container environemnt like Docker, Kubernetes, etc. or even just running as a service with systemctl.
-* More advanged configuration of NanoMDM including backend storage options, etc.
+* More advanced configuration of NanoMDM including backend storage options, etc.

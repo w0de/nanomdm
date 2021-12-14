@@ -134,7 +134,7 @@ CREATE TABLE commands (
     command_uuid VARCHAR(127) NOT NULL,
     request_type VARCHAR(63)  NOT NULL,
     -- Raw command Plist
-    command      TEXT         NOT NULL,
+    command      MEDIUMTEXT   NOT NULL,
 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -252,6 +252,9 @@ CREATE TABLE push_certs (
      * push services using this table will know the certificate has
      * changed and reload it. This is managed by the MySQL backend. */
     stale_token INTEGER NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
     PRIMARY KEY (topic),
     CHECK (topic != ''),
