@@ -27,7 +27,7 @@ func (w *MicroWebhook) Authenticate(r *mdm.Request, m *mdm.Authenticate) error {
 	ev := &Event{
 		Topic:     "mdm.Authenticate",
 		CreatedAt: time.Now(),
-		CommandUUID: "",
+		CommandUUID: "not a command event",
 		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
@@ -43,7 +43,7 @@ func (w *MicroWebhook) TokenUpdate(r *mdm.Request, m *mdm.TokenUpdate) error {
 	ev := &Event{
 		Topic:     "mdm.TokenUpdate",
 		CreatedAt: time.Now(),
-		CommandUUID: "",
+		CommandUUID: "not a command event",
 		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
@@ -66,7 +66,7 @@ func (w *MicroWebhook) CheckOut(r *mdm.Request, m *mdm.CheckOut) error {
 	ev := &Event{
 		Topic:     "mdm.CheckOut",
 		CreatedAt: time.Now(),
-		CommandUUID: "",
+		CommandUUID: "not a command event",
 		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
@@ -82,7 +82,7 @@ func (w *MicroWebhook) UserAuthenticate(r *mdm.Request, m *mdm.UserAuthenticate)
 	ev := &Event{
 		Topic:     "mdm.UserAuthenticate",
 		CreatedAt: time.Now(),
-		CommandUUID: "",
+		CommandUUID: "not a command event",
 		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
@@ -98,7 +98,7 @@ func (w *MicroWebhook) SetBootstrapToken(r *mdm.Request, m *mdm.SetBootstrapToke
 	ev := &Event{
 		Topic:     "mdm.SetBootstrapToken",
 		CreatedAt: time.Now(),
-		CommandUUID: "",
+		CommandUUID: "not a command event",
 		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
@@ -114,7 +114,7 @@ func (w *MicroWebhook) GetBootstrapToken(r *mdm.Request, m *mdm.GetBootstrapToke
 	ev := &Event{
 		Topic:     "mdm.GetBootstrapToken",
 		CreatedAt: time.Now(),
-		CommandUUID: "",
+		CommandUUID: "not a command event",
 		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
@@ -148,7 +148,7 @@ func (w *MicroWebhook) DeclarativeManagement(r *mdm.Request, m *mdm.DeclarativeM
 	ev := &Event{
 		Topic:     "mdm.DeclarativeManagement",
 		CreatedAt: time.Now(),
-		CommandUUID: "",
+		CommandUUID: "not a command event",
 		EnrollmentID: m.EnrollmentID,
 		CheckinEvent: &CheckinEvent{
 			UDID:         m.UDID,
